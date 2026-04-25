@@ -4,6 +4,10 @@ if status is-interactive
     # branch color
     set -g __fish_git_prompt_color_branch yellow
 
+    # default editor
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
+
     # symbols
     set -g __fish_git_prompt_showdirtystate true
     set -g __fish_git_prompt_showuntrackedfiles true
