@@ -22,9 +22,10 @@ if status is-interactive
     set -g __fish_git_prompt_color_stagedstate green
 
     # ssh agent
-    set -x SSH_AUTH_SOCK $HOME/.ssh/ssh-agent.sock
+    set -gx SSH_AUTH_SOCK $HOME/.ssh/ssh-agent.sock
 
     if not ssh-add -l &>/dev/null
+        rm -f $SSH_AUTH_SOCK
         eval (ssh-agent -c -a $SSH_AUTH_SOCK) >/dev/null
         ssh-add ~/.ssh/id_ed25519_github 2>/dev/null
     end
