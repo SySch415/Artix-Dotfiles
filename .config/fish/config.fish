@@ -30,4 +30,7 @@ if status is-interactive
         ssh-add ~/.ssh/id_ed25519_github 2>/dev/null
     end
 
+    fish_add_path $HOME/.local/bin
+    zoxide init fish | source
+
 end
